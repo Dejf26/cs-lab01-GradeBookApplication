@@ -51,13 +51,25 @@ namespace GradeBook.GradeBooks
             {
                 return 'F';
             }
-
         }
 
+        public override void CalculateStatistics()
+        {
+
+            if (Students.Count < 5)
+            {
+                Console.WriteLine("Less than 5 students");
+                return;
+            }
+
+            base.CalculateStatistics();
+        }
 
     }
 
 
-
 }
+
+
+
 
