@@ -16,9 +16,10 @@ namespace GradeBook.GradeBooks
     {
 
         public GradeBookType Type { get; set; }
-        
 
-        
+
+        public bool IsWeighted { get; set; }
+
 
 
 
@@ -274,10 +275,13 @@ namespace GradeBook.GradeBooks
                              from type in assembly.GetTypes()
                              where type.FullName == "GradeBook.GradeBooks.StandardGradeBook"
                              select type).FirstOrDefault();
-            
+
             return JsonConvert.DeserializeObject(json, gradebook);
-       
-        
+
+
+
+
+
         }
     }
 }
